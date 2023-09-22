@@ -44,3 +44,11 @@
     justify-content: space-evenly;
    
 }
+.tasks-container{
+  
+    height: 450px;
+    overflow-y: scroll;
+}
+.tasks-container::-webkit-scrollbar{
+    width:300px
+}
