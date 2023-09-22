@@ -11,7 +11,7 @@ const Home = () => {
             title: 'submit',
             description: "Assignment jaldi submit karo",
             priority: 'High',
-        },
+        }
     ]);
     const [id,setId]=useState(0);
     const [title, setTitle] = useState('');
@@ -65,6 +65,7 @@ const Home = () => {
     setTaskList([...tempArray])
     saveListToLocalStorage(tempArray)
     }
+
     const setTaskEditable=(id)=> {
      setIsEdit(true);
      setId(id);
@@ -75,8 +76,31 @@ const Home = () => {
             currentEditTask=task; 
         }
      })
-     console.log(currentEditTask)
-    
+     setTitle(currentEditTask.title);
+     setDescription(currentEditTask.description);
+     setPriority(currentEditTask.priority);
+    }
+    const updateTask=() => {
+    let indexToUpdate;
+
+    taskList.forEach((task,i) =>{
+    if (task , id===id){
+        indexToUpdate=i;
+    } 
+    })
+    const tempArray=taskList;
+    tempArray[indexToUpdate]={
+        id: id,
+        title: title,
+        description: description,
+        priority: priority,
+    }
+    setTaskList([...tempArray])
+    setId(0);
+    setTitle('');
+    setDescription('');
+    setPriority('');
+    setIsEdit(false);
     }
 
     return (
@@ -145,7 +169,7 @@ const Home = () => {
                                      <button
                                      type='button'
                                      className='add-button'
-                                     onClick={addTaskToList}
+                                     onClick={updateTask}
                                  >
                                      Update
                                  </button>
