@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Footer from "./../../component/Footer/Footer";
 import showToast from 'crunchy-toast';
 import Task from './../../component/Task/Task';
 import './Home.css';
@@ -209,10 +210,16 @@ const Home = () => {
                                 </div>
                             </form>
                         </div>
+                        
                     </div>
+                    <Footer/>
                 </div>
+                
             </div>
+            
         </>
     );
 };
+
 export default Home;
+
